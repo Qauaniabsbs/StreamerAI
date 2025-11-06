@@ -1,0 +1,16 @@
+Сайт ашылады: http://localhost:3000
+
+6. Render-ге орналастыру:
+- GitHub-қа пуш жасаңыз.
+- Render.com-да жаңа Web Service жасаңыз, GitHub репоға қосыңыз.
+- Build command: (бос қалдыруға болады)
+- Start command: `npm start`
+- Deploy жасаңыз — дайын.
+
+## Қалай қосуға болады
+- `GET /api/tracks` — барлық тректер
+- `POST /api/upload` — { title, artist, url, lyrics } — қолданушы әнін қосу
+- `GET /api/ingest` — демо инжест (SoundHelix демолары)
+
+## Модерация
+- `server/moderator_stub.js` ішіндегі `PROFANITY` тізімі арқылы қарапайым сүзгі. Қажет болса кеңейтіңіз.
