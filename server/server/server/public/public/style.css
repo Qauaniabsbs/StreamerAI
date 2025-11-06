@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+:root{ --accent: #4ADE80; }
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  color: #fff;
+  min-height: 100vh;
+}
+#app-overlay{
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: blur(4px);
+}
+.track-card{
+  background: rgba(20,20,25,0.6);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.badge-premium { background: #f59e0b; color: #000; padding: 0.15rem 0.4rem; border-radius: 999px; font-weight:700; font-size:0.75rem; }
