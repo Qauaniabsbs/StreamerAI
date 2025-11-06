@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SazAi — Demo Music App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="app-overlay" class="min-h-screen">
+    <div class="flex">
+      <nav class="hidden md:flex flex-col w-64 bg-black/60 p-4 space-y-4 text-white">
+        <div class="text-3xl font-extrabold">Saz<span class="text-green-400">Ai</span></div>
+        <button id="btn-refresh" class="p-2 rounded hover:bg-white/10 text-left">Жаңарту</button>
+        <button id="btn-upload-form" class="p-2 rounded hover:bg-white/10 text-left">Өз әніңді қосу</button>
+        <div class="mt-auto text-xs text-gray-400" id="user-status">Демо режим</div>
+      </nav>
+
+      <main class="flex-1 p-6 bg-black/50 text-white min-h-screen">
+        <header class="flex justify-between items-center mb-6">
+          <h1 class="text-3xl font-extrabold">SazAi — Әндер & Аудиокітаптар (Demo)</h1>
+          <div>
+            <button id="btn-ingest" class="bg-green-400 text-black px-4 py-2 rounded mr-2">Ingest</button>
+            <button id="btn-sync" class="bg-gray-800 px-4 py-2 rounded">Sync</button>
+          </div>
+        </header>
+
+        <section id="upload-section" class="hidden bg-gray-900/40 p-4 rounded mb-6">
+          <h2 class="text-lg font-semibold mb-2">Өз әніңізді қосыңыз</h2>
+          <input id="input-title" class="w-full p-2 mb-2 rounded bg-gray-800" placeholder="Ән атауы" />
+          <input id="input-artist" class="w-full p-2 mb-2 rounded bg-gray-800" placeholder="Орындаушы" />
+          <input id="input-url" class="w-full p-2 mb-2 rounded bg-gray-800" placeholder="MP3 URL (немесе external link)" />
+          <textarea id="input-lyrics" class="w-full p-2 mb-2 rounded bg-gray-800" placeholder="Сөздері / сипаттама (міндетті емес)"></textarea>
+          <div class="flex gap-2">
+            <button id="btn-upload" class="bg-green-400 px-3 py-2 rounded text-black">Жүктеу</button>
+            <button id="btn-cancel-upload" class="px-3 py-2 rounded bg-gray-700">Бас тарту</button>
+          </div>
+        </section>
+
+        <section>
+          <h3 class="text-2xl font-bold mb-4">Әндер тізімі</h3>
+          <div id="tracks" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
+
+        <footer class="fixed bottom-0 left-0 right-0 bg-black/80 border-t border-green-400/40 p-3">
+          <div class="max-w-4xl mx-auto flex items-center gap-4">
+            <div class="w-16 h-16 bg-gray-700 rounded flex items-center justify-center">
+              <i data-lucide="disc" class="w-8 h-8 text-green-400"></i>
+            </div>
+            <div class="flex-1">
+              <div id="player-title" class="font-bold">Ән таңдалмаған</div>
+              <div id="player-artist" class="text-sm text-gray-300">Орындаушы</div>
+            </div>
+            <audio id="audio-player" controls class="w-1/3"></audio>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', ()=> lucide.createIcons());</script>
+</body>
+</html>
